@@ -68,11 +68,12 @@ val AmmoniteVersion = "2.1.4-8-5d0c097"
 libraryDependencies ++= Seq(
   "com.typesafe" % "config" % "1.3.1",
   // -- testing --
-  "org.scalatest" %% "scalatest" % "3.2.0" % "test",
-  "org.scalactic" %% "scalactic" % "3.2.0",
-  "org.scalatest" %% "scalatest" % "3.2.0" % "test",
+  "org.scalacheck" %% "scalacheck" % "1.15.4" % "test",
+  "org.scalatest" %% "scalatest" % "3.2.10" % "test",
+  "com.github.alexarchambault" %% "scalacheck-shapeless_1.15" % "1.3.0" % Test,
   // scalaz
   "org.scalaz" %% "scalaz-core" % ScalaZVersion,
+  "org.scalaz" %% "scalaz-scalacheck-binding" % ScalaZVersion,
   // Embed Li Haoyi's Ammonite repl in your test project
   "com.lihaoyi" %% "ammonite" % AmmoniteVersion % "test" cross CrossVersion.full
 )
