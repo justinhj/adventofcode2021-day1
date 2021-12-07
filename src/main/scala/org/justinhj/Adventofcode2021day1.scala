@@ -18,11 +18,15 @@ object Adventofcode2021day1 {
   // Monoid instance that does all the work...
   implicit val increaseCountInstance : Monoid[IncreaseCount] = {
     Monoid.instance[IncreaseCount]({
-      case (l: IncreaseCount, r: IncreaseCount) =>
-        val inc = if(l.right < r.left) 1 else 0
-        IncreaseCount(l.count + r.count + inc, l.left, r.right)
-    },
-      IncreaseCount(0,Int.MinValue,Int.MaxValue))
+      case (left: IncreaseCount, right: IncreaseCount) =>
+        val inc = if(left.right < right.left) 1 else 0
+        val ret = IncreaseCount(left.count + right.count + inc,
+          if(left.left == Int.MinValue) right.left else left.left,
+          if(right.right == Int.MaxValue) left.right else right.right)
+        ret
+    }, {
+      IncreaseCount(0,Int.MinValue,Int.MaxValue)
+    })
   }
 
   case class IncreaseCount(count: Int, left: Int, right: Int)

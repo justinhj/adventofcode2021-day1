@@ -22,3 +22,9 @@ project/plugins/project/
 
 .bsp/
 .metals/
+
+.bloop/
+.vscode/
+project/.bloop/
+project/metals.sbt
+project/project/
