@@ -8,7 +8,9 @@ https://adventofcode.com/2021/day/1
 Namely Monoid, Traverse, Foldable and Applicative, with a bit of
 zipping and Functors.
 
-## How it works See my youtube channel Functional Justin for a video
+## How it works
+
+See my youtube channel [Functional Justin](https://youtu.be/ziWwsXD9w7M) for a video
 on this topic.
 
 In a nutshell the idea is to take a list of elements, such as
